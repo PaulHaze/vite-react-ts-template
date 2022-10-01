@@ -1,8 +1,6 @@
-import './App.css';
-
 function App() {
   return (
-    <div className="App">
+    <div>
       <h1>Vite Bare Bones Starter</h1>
     </div>
   );
