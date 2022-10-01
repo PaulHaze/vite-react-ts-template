@@ -16,10 +16,7 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:prettier/recommended',
   ],
-  plugins: ['@typescript-eslint/eslint-plugin', 'prettier'],
-  globals: {
-    React: 'readonly',
-  },
+  plugins: ['@typescript-eslint/eslint-plugin', 'import', 'prettier'],
   settings: {
     'import/parsers': {
       '@typescript-eslint/parser': ['.ts', '.tsx'],
@@ -29,7 +26,9 @@ module.exports = {
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
         moduleDirectory: ['node_modules', 'src/'],
       },
-      typescript: {},
+      typescript: {
+        project: './tsconfig.json',
+      },
     },
   },
   ignorePatterns: ['.eslintrc.cjs'],
@@ -40,7 +39,6 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'import/extensions': 'off',
     'import/no-unresolved': 'off',
-
     // 'import/extensions': [
     //   'error',
     //   'ignorePackages',
