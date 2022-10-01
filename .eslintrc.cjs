@@ -32,34 +32,43 @@ module.exports = {
       typescript: {},
     },
   },
-  ignorePatterns: ['.eslintrc.js'],
+  ignorePatterns: ['.eslintrc.cjs'],
   rules: {
     'space-before-function-paren': 'off',
     'arrow-parens': 'off',
     'no-console': 'off',
     'import/prefer-default-export': 'off',
-    'import/extensions': [
-      'warn',
-      'always',
-      {
-        ts: 'never',
-        tsx: 'never',
-        js: 'never',
-        jsx: 'never',
-      },
-    ],
+    'import/extensions': 'off',
+    'import/no-unresolved': 'off',
+
+    // 'import/extensions': [
+    //   'error',
+    //   'ignorePackages',
+    //   {
+    //     ts: 'never',
+    //     tsx: 'never',
+    //     js: 'never',
+    //     jsx: 'never',
+    //   },
+    // ],
     'import/no-extraneous-dependencies': [
-      'warn',
+      'error',
       {
-        devDependencies: [
-          '**/*.test.tsx',
-          '**/*.test.ts',
-          '**/*.test.jsx',
-          '**/*.test.js',
-          '**/*.stories.*',
-          '**/.storybook/**/*.*',
-        ],
+        devDependencies: true,
+        optionalDependencies: false,
+        peerDependencies: false,
       },
+      // 'warn',
+      // {
+      //   devDependencies: [
+      //     '**/*.test.tsx',
+      //     '**/*.test.ts',
+      //     '**/*.test.jsx',
+      //     '**/*.test.js',
+      //     '**/*.stories.*',
+      //     '**/.storybook/**/*.*',
+      //   ],
+      // },
     ],
     'jsx-a11y/href-no-hash': 'off',
     'react/react-in-jsx-scope': 'off',
